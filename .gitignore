@@ -5,7 +5,7 @@
 .yt_cours/
 
 # Config and cache python
-pipekines/__pycache__/
+pipelines/__pycache__/
 
 # generated content in local folders
 outputs/
