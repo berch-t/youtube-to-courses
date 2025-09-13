@@ -1,0 +1,191 @@
+# SOTA Template Registry - Configuration centrale pour tous les templates
+version: "1.0.0"
+last_updated: "2025-01-01"
+
+# Templates disponibles
+templates:
+  modern:
+    name: "Modern"
+    description: "Template moderne avec emojis et éléments visuels engageants"
+    config_file: "modern_template.yaml"
+    target_audience: ["students", "professionals", "general_public"]
+    difficulty_levels: ["beginner", "intermediate", "advanced"]
+    best_for: ["interactive_learning", "self_paced", "visual_learners"]
+    
+  academic:
+    name: "Academic"
+    description: "Template académique formel avec structure universitaire"
+    config_file: "academic_template.yaml"
+    target_audience: ["university_students", "researchers", "academics"]
+    difficulty_levels: ["intermediate", "advanced", "expert"]
+    best_for: ["formal_education", "research_training", "theoretical_content"]
+    
+  research:
+    name: "Research"
+    description: "Template de recherche avec citations et méthodologie scientifique"
+    config_file: "research_template.yaml"
+    target_audience: ["researchers", "graduate_students", "professionals"]
+    difficulty_levels: ["advanced", "expert"]
+    best_for: ["scientific_content", "methodology_training", "peer_review"]
+    
+  corporate:
+    name: "Corporate"
+    description: "Template professionnel pour formations d'entreprise"
+    config_file: "corporate_template.yaml"
+    target_audience: ["employees", "managers", "executives"]
+    difficulty_levels: ["beginner", "intermediate", "advanced"]
+    best_for: ["professional_development", "skills_training", "business_education"]
+
+# Pedagogical Frameworks Support
+pedagogical_frameworks:
+  bloom_taxonomy:
+    description: "Taxonomie de Bloom - Classification hiérarchique des objectifs d'apprentissage"
+    levels: ["remember", "understand", "apply", "analyze", "evaluate", "create"]
+    compatible_templates: ["modern", "academic", "research", "corporate"]
+    
+  constructivist:
+    description: "Approche constructiviste - Apprentissage par construction active du savoir"
+    principles: ["active_learning", "prior_knowledge", "social_interaction", "reflection"]
+    compatible_templates: ["modern", "academic", "corporate"]
+    
+  inquiry_based:
+    description: "Apprentissage par enquête - Découverte guidée et résolution de problèmes"
+    phases: ["question", "investigate", "create", "discuss", "reflect"]
+    compatible_templates: ["modern", "research", "academic"]
+    
+  scaffolding:
+    description: "Échafaudage pédagogique - Support graduel et retrait progressif"
+    strategies: ["modeling", "guided_practice", "independent_practice", "assessment"]
+    compatible_templates: ["modern", "academic", "corporate"]
+
+# Quality Enforcement Rules
+quality_enforcement:
+  content_validation:
+    min_word_count_per_module: 300
+    max_word_count_per_module: 2000
+    required_sections: ["objectives", "content", "assessment"]
+    
+  structure_validation:
+    min_modules: 3
+    max_modules: 15
+    proper_heading_hierarchy: true
+    consistent_formatting: true
+    
+  citation_requirements:
+    academic_sources_percentage: 70
+    recent_sources_years: 5
+    min_citations_per_module: 2
+    
+  accessibility_standards:
+    wcag_level: "AA"
+    reading_level_max: "university"
+    alternative_text_required: true
+    color_contrast_minimum: 4.5
+
+# Template Selection Algorithm
+selection_algorithm:
+  criteria:
+    target_audience:
+      weight: 0.3
+      factors: ["age_group", "education_level", "professional_context"]
+      
+    content_type:
+      weight: 0.25
+      factors: ["theoretical_vs_practical", "depth_level", "interactivity_needs"]
+      
+    learning_objectives:
+      weight: 0.25
+      factors: ["cognitive_level", "skill_type", "assessment_method"]
+      
+    delivery_context:
+      weight: 0.2
+      factors: ["time_availability", "platform", "group_vs_individual"]
+
+# Customization Options
+customization:
+  branding:
+    logo_placement: ["header", "footer", "sidebar"]
+    color_schemes: ["default", "corporate", "academic", "modern"]
+    font_options: ["serif", "sans-serif", "monospace"]
+    
+  content_options:
+    include_exercises: true
+    include_assessments: true  
+    include_glossary: true
+    include_bibliography: true
+    
+  interaction_elements:
+    callout_boxes: true
+    progress_indicators: true
+    interactive_elements: true
+    multimedia_support: true
+
+# Performance Optimization
+performance:
+  content_generation:
+    parallel_processing: true
+    caching_enabled: true
+    incremental_updates: true
+    
+  output_formats:
+    markdown: true
+    html: true
+    pdf: false  # Future implementation
+    epub: false # Future implementation
+    
+  quality_checks:
+    spell_check: true
+    grammar_check: true
+    citation_validation: true
+    link_validation: true
+
+# Integration Settings
+integrations:
+  citation_managers:
+    - zotero: "api_integration"
+    - mendeley: "api_integration"  
+    - crossref: "doi_lookup"
+    - arxiv: "paper_metadata"
+    
+  external_apis:
+    arxiv_search: true
+    crossref_citations: true
+    wikipedia_definitions: true
+    
+  export_formats:
+    learning_management_systems: ["moodle", "canvas", "blackboard"]
+    content_management: ["wordpress", "drupal", "notion"]
+    presentation_tools: ["reveal.js", "powerpoint", "google_slides"]
+
+# Analytics and Tracking
+analytics:
+  content_metrics:
+    reading_time_estimation: true
+    complexity_analysis: true
+    engagement_prediction: true
+    
+  learning_analytics:
+    objective_alignment: true
+    difficulty_progression: true
+    assessment_validity: true
+    
+  quality_metrics:
+    content_coherence: true
+    citation_quality: true
+    pedagogical_soundness: true
+
+# Localization Support
+localization:
+  languages:
+    primary: "fr"
+    supported: ["en", "es", "de", "it"]
+    
+  cultural_adaptation:
+    examples_localization: true
+    cultural_sensitivity: true
+    regional_compliance: true
+    
+  formatting_preferences:
+    date_format: "locale_specific"
+    number_format: "locale_specific"
+    citation_style: "regional_preference"

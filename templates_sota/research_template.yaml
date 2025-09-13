@@ -1,0 +1,189 @@
+# Research SOTA Template Configuration
+name: "Research"
+description: "Template de recherche avec citations et méthodologie scientifique"
+version: "1.0.0"
+
+# Header Configuration
+header:
+  title_format: "research_paper"
+  subtitle_format: "A State-of-the-Art Educational Framework" 
+  include_authors: false
+  include_affiliations: false
+  include_abstract: true
+  include_keywords: true
+  timestamp_format: "%Y-%m-%d"
+
+# Research Document Structure
+document_structure:
+  abstract:
+    title: "Abstract"
+    max_length: 300
+    include_keywords: true
+    include_classification: true
+    language: "formal_academic"
+    
+  introduction:
+    title: "1. Introduction"
+    subsections:
+      - background: "1.1 Background and Motivation"
+      - problem_statement: "1.2 Problem Statement"
+      - contributions: "1.3 Contributions"
+      - organization: "1.4 Document Organization"
+      
+  methodology:
+    title: "2. Methodology"
+    subsections:
+      - pedagogical_framework: "2.1 Pedagogical Framework"
+      - content_curation: "2.2 Content Curation Process"
+      - validation: "2.3 Validation Methodology"
+      - assessment: "2.4 Assessment Strategy"
+      
+  results:
+    title: "3. Educational Framework Implementation"
+    format: "research_findings"
+    
+  discussion:
+    title: "4. Discussion and Analysis"
+    include_limitations: true
+    include_future_work: true
+    
+  conclusion:
+    title: "5. Conclusions"
+    summary_style: "research_summary"
+
+# Citation and Reference System
+citations:
+  style: "ieee_research"
+  inline_format: "[{number}]"
+  footnote_support: true
+  
+  bibliography:
+    title: "References"
+    sort_order: "appearance"
+    include_dois: true
+    include_urls: true
+    
+  source_types:
+    journal_article:
+      format: "{authors}, \"{title},\" {journal}, vol. {volume}, no. {number}, pp. {pages}, {year}."
+    conference_paper:
+      format: "{authors}, \"{title},\" in {conference}, {location}, {year}, pp. {pages}."
+    arxiv_paper:
+      format: "{authors}, \"{title},\" arXiv preprint arXiv:{arxiv_id}, {year}."
+    book:
+      format: "{authors}, {title}. {publisher}, {year}."
+    website:
+      format: "{authors}, \"{title},\" {website}. [Online]. Available: {url}. [Accessed: {access_date}]."
+
+# Research-Grade Module Format
+module_format:
+  title_format: "3.{number} {title}: A Structured Learning Component"
+  
+  sections:
+    theoretical_foundation:
+      title: "3.{number}.1 Theoretical Foundation"
+      include_literature_review: true
+      citation_density: "high"
+      
+    learning_objectives:
+      title: "3.{number}.2 Learning Objectives and Outcomes"
+      alignment_framework: "bloom_taxonomy"
+      measurable_outcomes: true
+      
+    pedagogical_approach:
+      title: "3.{number}.3 Pedagogical Approach"
+      evidence_based: true
+      methodology_justification: true
+      
+    content_delivery:
+      title: "3.{number}.4 Content Structure and Delivery"
+      scaffolding_strategy: true
+      engagement_techniques: true
+      
+    assessment_methodology:
+      title: "3.{number}.5 Assessment and Evaluation"
+      formative_assessment: true
+      summative_assessment: true
+      rubric_based: true
+      
+    empirical_validation:
+      title: "3.{number}.6 Validation and Quality Metrics"
+      quality_indicators: true
+      success_metrics: true
+
+# Research Quality Standards
+quality_standards:
+  citation_requirements:
+    min_citations_per_module: 3
+    peer_reviewed_percentage: 80
+    recent_sources_percentage: 60
+    
+  content_validation:
+    fact_checking: "automated_and_manual"
+    expert_review: "recommended"
+    peer_validation: "enabled"
+    
+  methodological_rigor:
+    reproducibility: "high"
+    transparency: "full_disclosure"
+    bias_mitigation: "systematic"
+
+# Research Appendices
+appendices:
+  methodology_details:
+    title: "Appendix A: Detailed Methodology"
+    include_algorithms: true
+    include_validation_procedures: true
+    
+  data_sources:
+    title: "Appendix B: Data Sources and Curation"
+    source_evaluation_criteria: true
+    quality_metrics: true
+    
+  validation_results:
+    title: "Appendix C: Validation Results and Analysis"
+    statistical_analysis: true
+    quality_metrics_results: true
+    
+  pedagogical_frameworks:
+    title: "Appendix D: Pedagogical Framework Analysis"
+    comparative_analysis: true
+    effectiveness_studies: true
+    
+  glossary:
+    title: "Appendix E: Technical Glossary"
+    scientific_terminology: true
+    pedagogical_concepts: true
+
+# Research Metadata
+metadata:
+  document_type: "educational_research"
+  methodology: "structured_content_analysis"
+  validation_approach: "multi_layer_quality_assessment"
+  
+  research_classification:
+    primary_field: "Educational Technology"
+    secondary_fields: 
+      - "Learning Sciences"
+      - "Content Management"
+      - "Quality Assurance"
+      
+  quality_indicators:
+    - "peer_review_equivalent"
+    - "evidence_based_content"
+    - "methodological_transparency"
+    - "reproducible_results"
+
+# Formatting and Style
+formatting:
+  language_style: "formal_academic_english"  
+  person: "third_person_passive"
+  tense: "present_for_facts_past_for_methods"
+  
+  mathematical_notation: "standard_academic"
+  figure_numbering: "sequential"
+  table_numbering: "sequential"
+  equation_numbering: "sequential"
+  
+  section_numbering: "hierarchical_decimal"
+  reference_style: "ieee_numerical"

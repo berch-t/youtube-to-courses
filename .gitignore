@@ -1,0 +1,16 @@
+# env
+.env
+
+# venv
+.yt_cours/
+
+# Config and cache python
+pipekines/__pycache__/
+
+# generated content in local folders
+outputs/
+uploads/
+cache/
+
+# YT credentials cookies
+www.youtube.com_cookies.txt

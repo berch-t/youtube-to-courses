@@ -1,0 +1,1142 @@
+{% extends "base.html" %}
+
+{% block title %}Accueil - YouTube Course Builder{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-primary mb-3">
+                <i class="bi bi-youtube text-danger me-3"></i>
+                Course Builder SOTA
+            </h1>
+            <p class="lead text-muted">
+                Transformez automatiquement vos vidéos YouTube en cours professionnels en français, 
+                optimisés pour des présentations dynamiques et engageantes.
+            </p>
+        </div>
+
+        <!-- Mode Selection Tabs -->
+        <div class="mb-5">
+            <!-- Tab Navigation -->
+            <ul class="nav nav-pills nav-fill justify-content-center mb-4" id="mode-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="simple-tab" data-bs-toggle="pill" 
+                            data-bs-target="#simple-mode" type="button" role="tab" 
+                            aria-controls="simple-mode" aria-selected="true">
+                        <i class="bi bi-circle-fill me-2" style="color: #28a745;"></i>
+                        Mode Simple
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="advanced-tab" data-bs-toggle="pill" 
+                            data-bs-target="#advanced-mode" type="button" role="tab" 
+                            aria-controls="advanced-mode" aria-selected="false">
+                        <i class="bi bi-circle-half me-2" style="color: #ffc107;"></i>
+                        Mode Avancé
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="expert-tab" data-bs-toggle="pill" 
+                            data-bs-target="#expert-mode" type="button" role="tab" 
+                            aria-controls="expert-mode" aria-selected="false">
+                        <i class="bi bi-circle me-2" style="color: #dc3545;"></i>
+                        Mode Expert
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="mode-tabs-content">
+                <!-- Simple Mode -->
+                <div class="tab-pane fade show active" id="simple-mode" role="tabpanel" aria-labelledby="simple-tab">
+                    <div class="text-center mb-4">
+                        <h3 class="text-success">Mode Simple</h3>
+                        <p class="text-muted">
+                            Pipeline original - Fonctionnalités de base éprouvées
+                        </p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- YouTube Mode -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-link-45deg me-2"></i>
+                                        URL YouTube
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Pipeline éprouvé : téléchargement, transcription et génération de cours basique.
+                                    </p>
+                                    <button class="btn btn-primary w-100" onclick="showYouTubeForm('simple')">
+                                        <i class="bi bi-play-fill me-2"></i>
+                                        Commencer avec YouTube
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Local File Mode -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-file-earmark-text me-2"></i>
+                                        Fichier Local
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Uploadez votre transcription et générez directement votre cours.
+                                    </p>
+                                    <button class="btn btn-success w-100" onclick="showLocalForm('simple')">
+                                        <i class="bi bi-upload me-2"></i>
+                                        Uploader une transcription
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Mode -->
+                <div class="tab-pane fade" id="advanced-mode" role="tabpanel" aria-labelledby="advanced-tab">
+                    <div class="text-center mb-4">
+                        <h3 class="text-warning">Mode Avancé</h3>
+                        <p class="text-muted">
+                            Options SOTA sélectionnables - Recherche académique et citations
+                        </p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- YouTube Mode Advanced -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-warning">
+                                <div class="card-header bg-warning text-dark">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-link-45deg me-2"></i>
+                                        YouTube + SOTA
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Pipeline enrichi avec recherche arXiv, citations académiques et qualité assessment.
+                                    </p>
+                                    <button class="btn btn-warning w-100" onclick="showYouTubeForm('advanced')">
+                                        <i class="bi bi-stars me-2"></i>
+                                        Mode Avancé YouTube
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Local File Mode Advanced -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-info">
+                                <div class="card-header bg-info text-white">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-file-earmark-text me-2"></i>
+                                        Fichier + SOTA
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Enrichissement de transcription avec recherche et citations académiques.
+                                    </p>
+                                    <button class="btn btn-info w-100" onclick="showLocalForm('advanced')">
+                                        <i class="bi bi-journal-bookmark me-2"></i>
+                                        Mode Avancé Local
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expert Mode -->
+                <div class="tab-pane fade" id="expert-mode" role="tabpanel" aria-labelledby="expert-tab">
+                    <div class="text-center mb-4">
+                        <h3 class="text-danger">Mode Expert</h3>
+                        <p class="text-muted">
+                            Contrôle complet - Tous les paramètres SOTA configurables
+                        </p>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <!-- YouTube Mode Expert -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-danger">
+                                <div class="card-header bg-danger text-white">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-link-45deg me-2"></i>
+                                        YouTube Full SOTA
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Configuration complète : templates, frameworks pédagogiques, qualité sur mesure.
+                                    </p>
+                                    <button class="btn btn-danger w-100" onclick="showYouTubeForm('expert')">
+                                        <i class="bi bi-gear-fill me-2"></i>
+                                        Mode Expert YouTube
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Local File Mode Expert -->
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm border-dark">
+                                <div class="card-header bg-dark text-white">
+                                    <h5 class="card-title mb-0">
+                                        <i class="bi bi-file-earmark-text me-2"></i>
+                                        Fichier Full SOTA
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        Maîtrise totale des paramètres de génération et d'enrichissement.
+                                    </p>
+                                    <button class="btn btn-dark w-100" onclick="showLocalForm('expert')">
+                                        <i class="bi bi-cpu me-2"></i>
+                                        Mode Expert Local
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- YouTube Form -->
+        <div id="youtube-form" class="card shadow-lg d-none">
+            <div class="card-header" id="youtube-form-header">
+                <h4 class="mb-0" id="youtube-form-title">
+                    <i class="bi bi-youtube text-warning me-2"></i>
+                    Traitement d'une vidéo YouTube
+                </h4>
+            </div>
+            <div class="card-body">
+                <form id="youtube-processing-form">
+                    <div class="mb-4">
+                        <label for="youtube-url" class="form-label fw-bold">
+                            <i class="bi bi-link me-1"></i>URL de la vidéo YouTube
+                        </label>
+                        <input 
+                            type="url" 
+                            class="form-control form-control-lg" 
+                            id="youtube-url" 
+                            placeholder="https://www.youtube.com/watch?v=..."
+                            required
+                        >
+                        <div class="form-text">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Collez l'URL complète de la vidéo YouTube que vous souhaitez transformer en cours
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="chunk-minutes" class="form-label">
+                                <i class="bi bi-clock me-1"></i>Durée des chunks (minutes)
+                            </label>
+                            <select class="form-select" id="chunk-minutes">
+                                <option value="5">5 minutes</option>
+                                <option value="10" selected>10 minutes (recommandé)</option>
+                                <option value="15">15 minutes</option>
+                                <option value="20">20 minutes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                <i class="bi bi-gear me-1"></i>Options de base
+                            </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="include-exercises" checked>
+                                <label class="form-check-label" for="include-exercises">
+                                    Inclure des exercices pratiques
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SOTA Options Section -->
+                    <div id="sota-options-section" class="d-none">
+                        <h5 class="border-bottom pb-2 mb-3">
+                            <i class="bi bi-stars me-2"></i>Options SOTA
+                        </h5>
+                        
+                        <!-- Enable SOTA Toggle -->
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="enable-sota" onchange="toggleSOTAControls()">
+                                <label class="form-check-label fw-bold" for="enable-sota">
+                                    <i class="bi bi-rocket-takeoff me-1"></i>Activer les fonctionnalités SOTA
+                                </label>
+                            </div>
+                            <small class="text-muted">
+                                Active la recherche académique, les citations et l'évaluation qualité
+                            </small>
+                        </div>
+                        
+                        <div id="sota-controls" class="sota-controls-disabled">
+                            <!-- Research Options -->
+                            <div class="card border-secondary mb-3">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-search me-1"></i>Recherche Académique
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input sota-control" type="checkbox" id="enable-research" checked>
+                                                <label class="form-check-label" for="enable-research">
+                                                    Recherche arXiv automatique
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="max-papers" class="form-label">Nombre max de papers</label>
+                                            <select class="form-select form-select-sm sota-control" id="max-papers">
+                                                <option value="3">3 papers</option>
+                                                <option value="5" selected>5 papers</option>
+                                                <option value="10">10 papers</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Citation Options -->
+                            <div class="card border-secondary mb-3">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-quote me-1"></i>Gestion des Citations
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="citation-style" class="form-label">Style de citation</label>
+                                            <select class="form-select form-select-sm sota-control" id="citation-style">
+                                                <option value="ieee" selected>IEEE</option>
+                                                <option value="apa">APA</option>
+                                                <option value="doctoral">Doctoral</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check mt-4">
+                                                <input class="form-check-input sota-control" type="checkbox" id="enable-bibliography" checked>
+                                                <label class="form-check-label" for="enable-bibliography">
+                                                    Générer bibliographie
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Template Options -->
+                            <div class="card border-secondary mb-3" id="template-options">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-file-earmark-ruled me-1"></i>Templates & Structure
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="template-style" class="form-label">Style de template</label>
+                                            <select class="form-select form-select-sm sota-control" id="template-style">
+                                                <option value="modern" selected>Modern</option>
+                                                <option value="academic">Academic</option>
+                                                <option value="research">Research</option>
+                                                <option value="corporate">Corporate</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="pedagogical-framework" class="form-label">Framework pédagogique</label>
+                                            <select class="form-select form-select-sm sota-control" id="pedagogical-framework">
+                                                <option value="bloom" selected>Bloom's Taxonomy</option>
+                                                <option value="constructivist">Constructiviste</option>
+                                                <option value="inquiry">Inquiry-Based</option>
+                                                <option value="scaffolding">Scaffolding</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quality Assessment -->
+                            <div class="card border-secondary mb-3" id="quality-options">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-shield-check me-1"></i>Évaluation Qualité
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input sota-control" type="checkbox" id="assess-technical" checked>
+                                                <label class="form-check-label" for="assess-technical">
+                                                    Précision technique
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input sota-control" type="checkbox" id="assess-readability" checked>
+                                                <label class="form-check-label" for="assess-readability">
+                                                    Lisibilité
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input sota-control" type="checkbox" id="assess-completeness" checked>
+                                                <label class="form-check-label" for="assess-completeness">
+                                                    Complétude
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="button" class="btn btn-outline-secondary me-md-2" onclick="hideAllForms()">
+                            <i class="bi bi-arrow-left me-1"></i>Retour
+                        </button>
+                        <button type="submit" class="btn btn-lg" id="youtube-submit-btn">
+                            <i class="bi bi-magic me-2"></i>Générer le Cours
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Local File Form -->
+        <div id="local-form" class="card shadow-lg d-none">
+            <div class="card-header" id="local-form-header">
+                <h4 class="mb-0" id="local-form-title">
+                    <i class="bi bi-file-earmark-arrow-up me-2"></i>
+                    Upload d'une transcription existante
+                </h4>
+            </div>
+            <div class="card-body">
+                <form id="local-processing-form" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <label for="transcript-file" class="form-label fw-bold">
+                            <i class="bi bi-file-earmark-text me-1"></i>Fichier de transcription
+                        </label>
+                        <input 
+                            type="file" 
+                            class="form-control form-control-lg" 
+                            id="transcript-file" 
+                            accept=".md"
+                            required
+                        >
+                        <div class="form-text">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Accepte uniquement les fichiers Markdown (.md) générés par notre pipeline de transcription
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="output-filename" class="form-label">
+                            <i class="bi bi-file-earmark me-1"></i>Nom du cours généré
+                        </label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="output-filename" 
+                            placeholder="mon-cours-sota.md"
+                            value="cours-sota.md"
+                        >
+                        <div class="form-text">
+                            Le fichier sera automatiquement sauvegardé avec un timestamp
+                        </div>
+                    </div>
+                    
+                    <!-- SOTA Options Section for Local -->
+                    <div id="local-sota-options-section" class="d-none">
+                        <h5 class="border-bottom pb-2 mb-3">
+                            <i class="bi bi-stars me-2"></i>Options SOTA
+                        </h5>
+                        
+                        <!-- Enable SOTA Toggle -->
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="local-enable-sota" onchange="toggleLocalSOTAControls()">
+                                <label class="form-check-label fw-bold" for="local-enable-sota">
+                                    <i class="bi bi-rocket-takeoff me-1"></i>Activer les fonctionnalités SOTA
+                                </label>
+                            </div>
+                            <small class="text-muted">
+                                Active l'enrichissement avec recherche académique et citations
+                            </small>
+                        </div>
+                        
+                        <div id="local-sota-controls" class="sota-controls-disabled">
+                            <!-- Research Options -->
+                            <div class="card border-secondary mb-3">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-search me-1"></i>Recherche Académique
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input local-sota-control" type="checkbox" id="local-enable-research" checked>
+                                                <label class="form-check-label" for="local-enable-research">
+                                                    Recherche arXiv automatique
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="local-max-papers" class="form-label">Nombre max de papers</label>
+                                            <select class="form-select form-select-sm local-sota-control" id="local-max-papers">
+                                                <option value="3">3 papers</option>
+                                                <option value="5" selected>5 papers</option>
+                                                <option value="10">10 papers</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Citation Options -->
+                            <div class="card border-secondary mb-3">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-quote me-1"></i>Gestion des Citations
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="local-citation-style" class="form-label">Style de citation</label>
+                                            <select class="form-select form-select-sm local-sota-control" id="local-citation-style">
+                                                <option value="ieee" selected>IEEE</option>
+                                                <option value="apa">APA</option>
+                                                <option value="doctoral">Doctoral</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check mt-4">
+                                                <input class="form-check-input local-sota-control" type="checkbox" id="local-enable-bibliography" checked>
+                                                <label class="form-check-label" for="local-enable-bibliography">
+                                                    Générer bibliographie
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Template Options -->
+                            <div class="card border-secondary mb-3" id="local-template-options">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-file-earmark-ruled me-1"></i>Templates & Structure
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="local-template-style" class="form-label">Style de template</label>
+                                            <select class="form-select form-select-sm local-sota-control" id="local-template-style">
+                                                <option value="modern" selected>Modern</option>
+                                                <option value="academic">Academic</option>
+                                                <option value="research">Research</option>
+                                                <option value="corporate">Corporate</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="local-pedagogical-framework" class="form-label">Framework pédagogique</label>
+                                            <select class="form-select form-select-sm local-sota-control" id="local-pedagogical-framework">
+                                                <option value="bloom" selected>Bloom's Taxonomy</option>
+                                                <option value="constructivist">Constructiviste</option>
+                                                <option value="inquiry">Inquiry-Based</option>
+                                                <option value="scaffolding">Scaffolding</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quality Assessment -->
+                            <div class="card border-secondary mb-3" id="local-quality-options">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-shield-check me-1"></i>Évaluation Qualité
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input local-sota-control" type="checkbox" id="local-assess-technical" checked>
+                                                <label class="form-check-label" for="local-assess-technical">
+                                                    Précision technique
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input local-sota-control" type="checkbox" id="local-assess-readability" checked>
+                                                <label class="form-check-label" for="local-assess-readability">
+                                                    Lisibilité
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input local-sota-control" type="checkbox" id="local-assess-completeness" checked>
+                                                <label class="form-check-label" for="local-assess-completeness">
+                                                    Complétude
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="button" class="btn btn-outline-secondary me-md-2" onclick="hideAllForms()">
+                            <i class="bi bi-arrow-left me-1"></i>Retour
+                        </button>
+                        <button type="submit" class="btn btn-lg" id="local-submit-btn">
+                            <i class="bi bi-lightning-charge me-2"></i>Convertir en Cours
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Progress Modal -->
+        <div class="modal fade" id="progressModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">
+                            <i class="bi bi-gear-fill me-2 spin"></i>
+                            Traitement en cours...
+                        </h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center mb-4">
+                            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                                <span class="visually-hidden">Chargement...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress mb-3" style="height: 20px;">
+                            <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                                 role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                        
+                        <div id="progress-message" class="text-center text-muted">
+                            Initialisation...
+                        </div>
+                        
+                        <div id="progress-details" class="mt-3 small text-muted">
+                            <ul class="list-unstyled mb-0">
+                                <li><i class="bi bi-clock me-2"></i><span id="time-elapsed">00:00</span> écoulé</li>
+                                <li><i class="bi bi-cpu me-2"></i>Processus: <span id="current-step">Préparation</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Le traitement peut prendre plusieurs minutes selon la durée de la vidéo.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            Cours généré avec succès !
+                        </h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="mb-4">
+                            <i class="bi bi-trophy-fill text-warning" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4 class="text-success mb-3">Félicitations !</h4>
+                        <p class="lead">Votre cours SOTA a été généré avec succès et est prêt à être téléchargé.</p>
+                        
+                        <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
+                            <a id="download-link" href="#" class="btn btn-success btn-lg">
+                                <i class="bi bi-download me-2"></i>
+                                Télécharger le Cours
+                            </a>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                Fermer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4 text-secondary">
+                    <i class="bi bi-stars me-2"></i>Fonctionnalités SOTA
+                </h2>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-translate text-primary" style="font-size: 2rem;"></i>
+                        <h5 class="card-title mt-3">Traduction Intelligente</h5>
+                        <p class="card-text text-muted">
+                            Traduction contextuelle en français avec préservation des termes techniques
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-diagram-3 text-primary" style="font-size: 2rem;"></i>
+                        <h5 class="card-title mt-3">Structure Pédagogique</h5>
+                        <p class="card-text text-muted">
+                            Réorganisation automatique en modules logiques avec objectifs d'apprentissage
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-presentation text-primary" style="font-size: 2rem;"></i>
+                        <h5 class="card-title mt-3">Optimisé pour le Live</h5>
+                        <p class="card-text text-muted">
+                            Format spécialement conçu pour les présentations dynamiques et l'engagement audience
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// SOTA Course Builder - New JavaScript (replacing old version)
+let currentTaskId = null;
+let progressInterval = null;
+let startTime = null;
+let currentMode = 'simple';
+
+// Show/Hide forms with mode support
+function showYouTubeForm(mode = 'simple') {
+    console.log('[DEBUG] showYouTubeForm called with mode:', mode);
+    hideAllForms();
+    currentMode = mode;
+    
+    const form = document.getElementById('youtube-form');
+    const header = document.getElementById('youtube-form-header');
+    const title = document.getElementById('youtube-form-title');
+    const submitBtn = document.getElementById('youtube-submit-btn');
+    const sotaSection = document.getElementById('sota-options-section');
+    
+    console.log('[DEBUG] Elements found:', {
+        form: !!form,
+        header: !!header, 
+        title: !!title,
+        submitBtn: !!submitBtn,
+        sotaSection: !!sotaSection
+    });
+    
+    // Configure form based on mode
+    switch(mode) {
+        case 'simple':
+            header.className = 'card-header bg-primary text-white';
+            title.innerHTML = '<i class="bi bi-youtube text-warning me-2"></i>Mode Simple - Traitement YouTube';
+            submitBtn.className = 'btn btn-primary btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-play-fill me-2"></i>Générer le Cours';
+            sotaSection.classList.add('d-none');
+            break;
+            
+        case 'advanced':
+            console.log('[DEBUG] Advanced mode activated');
+            header.className = 'card-header bg-warning text-dark';
+            title.innerHTML = '<i class="bi bi-stars text-primary me-2"></i>Mode Avancé - YouTube + SOTA';
+            submitBtn.className = 'btn btn-warning btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-stars me-2"></i>Générer le Cours SOTA';
+            console.log('[DEBUG] Removing d-none from sotaSection');
+            sotaSection.classList.remove('d-none');
+            document.getElementById('enable-sota').checked = true;
+            toggleSOTAControls();
+            console.log('[DEBUG] SOTA section should now be visible');
+            break;
+            
+        case 'expert':
+            header.className = 'card-header bg-danger text-white';
+            title.innerHTML = '<i class="bi bi-gear-fill text-warning me-2"></i>Mode Expert - YouTube Full SOTA';
+            submitBtn.className = 'btn btn-danger btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-cpu me-2"></i>Générer le Cours Expert';
+            sotaSection.classList.remove('d-none');
+            document.getElementById('enable-sota').checked = true;
+            toggleSOTAControls();
+            break;
+    }
+    
+    form.classList.remove('d-none');
+}
+
+function showLocalForm(mode = 'simple') {
+    hideAllForms();
+    currentMode = mode;
+    
+    const form = document.getElementById('local-form');
+    const header = document.getElementById('local-form-header');
+    const title = document.getElementById('local-form-title');
+    const submitBtn = document.getElementById('local-submit-btn');
+    const sotaSection = document.getElementById('local-sota-options-section');
+    
+    // Configure form based on mode
+    switch(mode) {
+        case 'simple':
+            header.className = 'card-header bg-success text-white';
+            title.innerHTML = '<i class="bi bi-file-earmark-arrow-up me-2"></i>Mode Simple - Upload Local';
+            submitBtn.className = 'btn btn-success btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-upload me-2"></i>Convertir en Cours';
+            sotaSection.classList.add('d-none');
+            break;
+            
+        case 'advanced':
+            header.className = 'card-header bg-info text-white';
+            title.innerHTML = '<i class="bi bi-journal-bookmark me-2"></i>Mode Avancé - Fichier + SOTA';
+            submitBtn.className = 'btn btn-info btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-stars me-2"></i>Enrichir en Cours SOTA';
+            sotaSection.classList.remove('d-none');
+            document.getElementById('local-enable-sota').checked = true;
+            toggleLocalSOTAControls();
+            break;
+            
+        case 'expert':
+            header.className = 'card-header bg-dark text-white';
+            title.innerHTML = '<i class="bi bi-cpu me-2"></i>Mode Expert - Fichier Full SOTA';
+            submitBtn.className = 'btn btn-dark btn-lg';
+            submitBtn.innerHTML = '<i class="bi bi-gear-fill me-2"></i>Générer le Cours Expert';
+            sotaSection.classList.remove('d-none');
+            document.getElementById('local-enable-sota').checked = true;
+            toggleLocalSOTAControls();
+            break;
+    }
+    
+    form.classList.remove('d-none');
+}
+
+function hideAllForms() {
+    document.getElementById('youtube-form').classList.add('d-none');
+    document.getElementById('local-form').classList.add('d-none');
+}
+
+// SOTA Controls Management
+function toggleSOTAControls() {
+    const isEnabled = document.getElementById('enable-sota').checked;
+    const controls = document.getElementById('sota-controls');
+    const allControls = document.querySelectorAll('.sota-control');
+    
+    if (isEnabled) {
+        controls.classList.remove('sota-controls-disabled');
+        controls.classList.add('sota-controls-enabled');
+        allControls.forEach(control => control.disabled = false);
+    } else {
+        controls.classList.add('sota-controls-disabled');
+        controls.classList.remove('sota-controls-enabled');
+        allControls.forEach(control => control.disabled = true);
+    }
+}
+
+function toggleLocalSOTAControls() {
+    const isEnabled = document.getElementById('local-enable-sota').checked;
+    const controls = document.getElementById('local-sota-controls');
+    const allControls = document.querySelectorAll('.local-sota-control');
+    
+    if (isEnabled) {
+        controls.classList.remove('sota-controls-disabled');
+        controls.classList.add('sota-controls-enabled');
+        allControls.forEach(control => control.disabled = false);
+    } else {
+        controls.classList.add('sota-controls-disabled');
+        controls.classList.remove('sota-controls-enabled');
+        allControls.forEach(control => control.disabled = true);
+    }
+}
+
+// Collect SOTA Configuration
+function getSOTAConfig() {
+    if (currentMode === 'simple') {
+        return { enable_sota: false };
+    }
+    
+    const enableSOTA = document.getElementById('enable-sota')?.checked || false;
+    
+    if (!enableSOTA) {
+        return { enable_sota: false };
+    }
+    
+    return {
+        enable_sota: true,
+        research: {
+            enable_research: document.getElementById('enable-research')?.checked || false,
+            max_papers: parseInt(document.getElementById('max-papers')?.value || 5)
+        },
+        citations: {
+            citation_style: document.getElementById('citation-style')?.value || 'ieee',
+            enable_bibliography: document.getElementById('enable-bibliography')?.checked || false
+        },
+        template: {
+            template_style: document.getElementById('template-style')?.value || 'modern',
+            pedagogical_framework: document.getElementById('pedagogical-framework')?.value || 'bloom'
+        },
+        quality: {
+            assess_technical: document.getElementById('assess-technical')?.checked || false,
+            assess_readability: document.getElementById('assess-readability')?.checked || false,
+            assess_completeness: document.getElementById('assess-completeness')?.checked || false
+        }
+    };
+}
+
+function getLocalSOTAConfig() {
+    if (currentMode === 'simple') {
+        return { enable_sota: false };
+    }
+    
+    const enableSOTA = document.getElementById('local-enable-sota')?.checked || false;
+    
+    if (!enableSOTA) {
+        return { enable_sota: false };
+    }
+    
+    return {
+        enable_sota: true,
+        research: {
+            enable_research: document.getElementById('local-enable-research')?.checked || false,
+            max_papers: parseInt(document.getElementById('local-max-papers')?.value || 5)
+        },
+        citations: {
+            citation_style: document.getElementById('local-citation-style')?.value || 'ieee',
+            enable_bibliography: document.getElementById('local-enable-bibliography')?.checked || false
+        },
+        template: {
+            template_style: document.getElementById('local-template-style')?.value || 'modern',
+            pedagogical_framework: document.getElementById('local-pedagogical-framework')?.value || 'bloom'
+        },
+        quality: {
+            assess_technical: document.getElementById('local-assess-technical')?.checked || false,
+            assess_readability: document.getElementById('local-assess-readability')?.checked || false,
+            assess_completeness: document.getElementById('local-assess-completeness')?.checked || false
+        }
+    };
+}
+
+// YouTube form submission
+document.getElementById('youtube-processing-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const url = document.getElementById('youtube-url').value;
+    const chunkMinutes = parseInt(document.getElementById('chunk-minutes').value);
+    const includeExercises = document.getElementById('include-exercises').checked;
+    const sotaConfig = getSOTAConfig();
+    
+    if (!url) {
+        alert('Veuillez entrer une URL YouTube valide');
+        return;
+    }
+    
+    try {
+        const response = await fetch('/process-youtube', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                url: url,
+                chunk_minutes: chunkMinutes,
+                include_exercises: includeExercises,
+                mode: currentMode,
+                sota_config: sotaConfig
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+            currentTaskId = result.task_id;
+            showProgressModal();
+            startProgressMonitoring();
+        } else {
+            alert('Erreur: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Erreur de connexion au serveur');
+    }
+});
+
+// Local file form submission
+document.getElementById('local-processing-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    const fileInput = document.getElementById('transcript-file');
+    const outputName = document.getElementById('output-filename').value;
+    const sotaConfig = getLocalSOTAConfig();
+    
+    if (!fileInput.files[0]) {
+        alert('Veuillez sélectionner un fichier de transcription');
+        return;
+    }
+    
+    formData.append('transcript_file', fileInput.files[0]);
+    formData.append('output_filename', outputName);
+    formData.append('mode', currentMode);
+    formData.append('sota_config', JSON.stringify(sotaConfig));
+    
+    try {
+        const response = await fetch('/process-local', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+            currentTaskId = result.task_id;
+            showProgressModal();
+            startProgressMonitoring();
+        } else {
+            alert('Erreur: ' + result.error);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Erreur de connexion au serveur');
+    }
+});
+
+function showProgressModal() {
+    const modal = new bootstrap.Modal(document.getElementById('progressModal'));
+    modal.show();
+    startTime = new Date();
+    
+    // Disable modal close
+    document.getElementById('progressModal').setAttribute('data-bs-backdrop', 'static');
+}
+
+function startProgressMonitoring() {
+    progressInterval = setInterval(async () => {
+        try {
+            const response = await fetch(`/status/${currentTaskId}`);
+            const task = await response.json();
+            
+            updateProgressUI(task);
+            
+            if (task.status === 'completed') {
+                clearInterval(progressInterval);
+                showSuccess(task.result);
+            } else if (task.status === 'failed') {
+                clearInterval(progressInterval);
+                showError(task.error || 'Une erreur est survenue');
+            }
+        } catch (error) {
+            console.error('Error checking task status:', error);
+        }
+    }, 2000); // Check every 2 seconds
+}
+
+function updateProgressUI(task) {
+    const progressBar = document.getElementById('progress-bar');
+    const messageEl = document.getElementById('progress-message');
+    const stepEl = document.getElementById('current-step');
+    const timeEl = document.getElementById('time-elapsed');
+    
+    // Update progress bar
+    progressBar.style.width = task.progress + '%';
+    progressBar.textContent = task.progress + '%';
+    
+    // Update message
+    messageEl.textContent = task.message || 'Traitement en cours...';
+    
+    // Update current step
+    stepEl.textContent = getStepName(task.progress);
+    
+    // Update elapsed time
+    if (startTime) {
+        const elapsed = Math.floor((new Date() - startTime) / 1000);
+        const minutes = Math.floor(elapsed / 60);
+        const seconds = elapsed % 60;
+        timeEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+}
+
+function getStepName(progress) {
+    if (progress < 20) return 'Initialisation';
+    if (progress < 40) return 'Téléchargement audio';
+    if (progress < 70) return 'Transcription';
+    if (progress < 90) return 'Génération du cours';
+    return 'Finalisation';
+}
+
+function showSuccess(result) {
+    // Hide progress modal
+    const progressModal = bootstrap.Modal.getInstance(document.getElementById('progressModal'));
+    progressModal.hide();
+    
+    // Update download link
+    document.getElementById('download-link').href = result.download_url;
+    
+    // Show success modal
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    successModal.show();
+}
+
+function showError(error) {
+    clearInterval(progressInterval);
+    
+    // Hide progress modal
+    const progressModal = bootstrap.Modal.getInstance(document.getElementById('progressModal'));
+    progressModal.hide();
+    
+    alert('Erreur: ' + error);
+}
+
+// Auto-fill filename from uploaded file
+document.getElementById('transcript-file').addEventListener('change', function(e) {
+    if (e.target.files[0]) {
+        const fileName = e.target.files[0].name.replace('.md', '');
+        document.getElementById('output-filename').value = `cours-${fileName}.md`;
+    }
+});
+</script>
+{% endblock %}

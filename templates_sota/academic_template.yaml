@@ -1,0 +1,139 @@
+# Academic SOTA Template Configuration
+name: "Academic"
+description: "Template académique formel avec structure universitaire"
+version: "1.0.0"
+
+# Header Configuration
+header:
+  title_format: "formal"
+  include_abstract: true
+  include_toc: true
+  include_metadata: true
+  timestamp_format: "%Y-%m-%d"
+  academic_style: true
+
+# Document Structure
+document_structure:
+  abstract:
+    title: "Abstract"
+    include_keywords: true
+    include_classification: true
+    max_length: 250
+    
+  table_of_contents:
+    title: "Table des Matières"
+    depth: 3
+    include_page_numbers: false
+    
+  introduction:
+    title: "1. Introduction"
+    subsections:
+      - context: "1.1 Contexte et Justification"
+      - objectives: "1.2 Objectifs Pédagogiques" 
+      - methodology: "1.3 Méthodologie Pédagogique"
+
+# Module formatting (academic style)
+module_format:
+  numbering: "hierarchical"
+  title_format: "## {number}. {title}"
+  
+  sections:
+    introduction:
+      title: "{number}.1 Introduction"
+      required: true
+    theoretical_background:
+      title: "{number}.2 Fondements Théoriques"
+      required: false
+    learning_objectives:
+      title: "{number}.3 Objectifs d'Apprentissage"
+      format: "formal_list"
+      required: true
+    content:
+      title: "{number}.4 Développement du Contenu"
+      subsections: true
+      required: true
+    methodology:
+      title: "{number}.5 Approche Méthodologique"
+      required: false
+    evaluation:
+      title: "{number}.6 Modalités d'Évaluation"
+      required: true
+    conclusion:
+      title: "{number}.7 Synthèse"
+      required: true
+
+# Academic styling
+styling:
+  use_emojis: false
+  use_formal_language: true
+  use_third_person: true
+  citation_style: "academic"
+  
+  formatting:
+    emphasis: "**bold**"
+    important: "*italique*"
+    technical_terms: "**terme technique**"
+    
+  section_separators: "---"
+  subsection_format: "### {title}"
+  
+# Citations and References
+citations:
+  style: "ieee"  # or "apa", "doctoral"
+  inline_format: "[{number}]"
+  bibliography_title: "Références"
+  
+  required_fields:
+    - "author"
+    - "title" 
+    - "year"
+    - "source"
+    
+# Appendices (Academic format)
+appendices:
+  terminology:
+    title: "Annexe A: Terminologie Spécialisée"
+    format: "alphabetical_definitions"
+    
+  methodology:
+    title: "Annexe B: Détails Méthodologiques"
+    include_frameworks: true
+    include_assessment_rubrics: true
+    
+  resources:
+    title: "Annexe C: Ressources Complémentaires"
+    sections:
+      - primary_sources: "Sources Primaires"
+      - secondary_sources: "Sources Secondaires"
+      - digital_resources: "Ressources Numériques"
+      
+  assessment:
+    title: "Annexe D: Grilles d'Évaluation"
+    include_rubrics: true
+    include_criteria: true
+
+# Quality Standards (Academic)
+quality_standards:
+  content_depth: "comprehensive"
+  language_level: "formal_academic"
+  evidence_requirements: "peer_reviewed_sources"
+  
+  validation_criteria:
+    theoretical_grounding: true
+    methodological_rigor: true
+    clear_learning_progression: true
+    comprehensive_assessment: true
+    
+# Metadata Requirements
+metadata:
+  classification_system: "educational_taxonomy"
+  subject_area: "auto_detect"
+  competency_framework: "bloom_taxonomy"
+  difficulty_calibration: "academic_standards"
+  
+  required_metadata:
+    - course_level
+    - prerequisite_knowledge
+    - estimated_study_time
+    - assessment_methods
+    - learning_outcomes

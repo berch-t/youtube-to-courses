@@ -1,0 +1,211 @@
+# Corporate SOTA Template Configuration
+name: "Corporate"
+description: "Template professionnel pour formations d'entreprise et développement des compétences"
+version: "1.0.0"
+
+# Header Configuration
+header:
+  title_format: "professional"
+  company_branding: true
+  include_logo_placeholder: true
+  include_training_metadata: true
+  timestamp_format: "%B %Y"
+
+# Corporate Document Structure
+document_structure:
+  executive_summary:
+    title: "📊 Résumé Exécutif"
+    include_roi_projection: true
+    include_skill_alignment: true
+    include_business_impact: true
+    max_length: 200
+    
+  business_context:
+    title: "💼 Contexte Business"
+    subsections:
+      - market_relevance: "Pertinence Marché"
+      - competitive_advantage: "Avantage Concurrentiel"
+      - skill_gap_analysis: "Analyse des Gaps de Compétences"
+      
+  learning_path:
+    title: "🗺️ Parcours d'Apprentissage"
+    include_progression_map: true
+    include_milestones: true
+    include_time_investment: true
+    
+  roi_analysis:
+    title: "📈 Analyse ROI Formation"
+    include_metrics: true
+    include_business_outcomes: true
+
+# Corporate Module Format
+module_format:
+  title_format: "Module {number}: {title}"
+  business_relevance_section: true
+  
+  sections:
+    business_objective:
+      title: "🎯 Objectif Business"
+      alignment_with_strategy: true
+      kpi_connection: true
+      
+    learning_outcomes:
+      title: "📚 Résultats d'Apprentissage"
+      measurable_outcomes: true
+      skill_assessment: true
+      
+    content_delivery:
+      title: "📖 Contenu de Formation"
+      practical_focus: "high"
+      real_world_examples: true
+      
+    practical_application:
+      title: "⚡ Application Pratique"
+      case_studies: true
+      role_playing: true
+      simulations: true
+      
+    skill_validation:
+      title: "✅ Validation des Compétences"
+      competency_based: true
+      performance_indicators: true
+      
+    career_impact:
+      title: "🚀 Impact Carrière"
+      skill_enhancement: true
+      promotion_readiness: true
+
+# Corporate Learning Standards
+learning_standards:
+  competency_framework: "corporate_skills_matrix"
+  assessment_approach: "performance_based"
+  certification_path: "industry_recognized"
+  
+  business_alignment:
+    strategic_objectives: true
+    performance_metrics: true
+    roi_measurement: true
+    
+  delivery_methods:
+    - self_paced: "Autodidacte"
+    - instructor_led: "Formateur"
+    - blended: "Mixte"
+    - microlearning: "Micro-apprentissage"
+
+# Performance Tracking
+tracking_metrics:
+  engagement_metrics:
+    - completion_rate: "Taux de Complétion"
+    - time_spent: "Temps Consacré"
+    - interaction_score: "Score d'Interaction"
+    
+  learning_metrics:
+    - knowledge_retention: "Rétention des Connaissances"
+    - skill_application: "Application des Compétences"
+    - performance_improvement: "Amélioration Performance"
+    
+  business_metrics:
+    - productivity_increase: "Augmentation Productivité"
+    - quality_improvement: "Amélioration Qualité"
+    - customer_satisfaction: "Satisfaction Client"
+
+# Corporate Appendices
+appendices:
+  competency_matrix:
+    title: "Matrice de Compétences"
+    skill_levels: ["Débutant", "Intermédiaire", "Avancé", "Expert"]
+    assessment_criteria: true
+    
+  implementation_guide:
+    title: "Guide d'Implémentation"
+    deployment_strategy: true
+    change_management: true
+    communication_plan: true
+    
+  roi_calculator:
+    title: "Calculateur ROI"
+    cost_benefit_analysis: true
+    payback_period: true
+    productivity_gains: true
+    
+  certification_path:
+    title: "Parcours de Certification"
+    prerequisite_skills: true
+    assessment_methods: true
+    maintenance_requirements: true
+    
+  resources_toolkit:
+    title: "Boîte à Outils Ressources"
+    templates: true
+    checklists: true
+    reference_guides: true
+
+# Corporate Styling
+styling:
+  professional_tone: true
+  action_oriented: true
+  results_focused: true
+  
+  visual_elements:
+    use_icons: true
+    use_progress_bars: true
+    use_dashboard_style: true
+    use_infographics: true
+    
+  color_scheme: "corporate_blue_gray"
+  font_preference: "sans_serif_professional"
+  
+  callout_types:
+    - "💡 Insight Business"
+    - "⚠️ Point d'Attention"
+    - "📊 Métrique Clé"
+    - "🎯 Action Required"
+    - "🔄 Best Practice"
+
+# Quality Assurance (Corporate)
+quality_assurance:
+  content_review:
+    sme_validation: "subject_matter_expert"
+    business_alignment: "strategy_team"
+    compliance_check: "legal_hr_review"
+    
+  accessibility:
+    wcag_compliance: "level_aa"
+    mobile_optimization: true
+    offline_capability: true
+    
+  localization:
+    language_adaptation: true
+    cultural_sensitivity: true
+    regional_compliance: true
+
+# Integration Requirements
+integration:
+  lms_compatibility: ["Cornerstone", "SuccessFactors", "Workday"]
+  hrms_integration: true
+  performance_management_sync: true
+  
+  reporting:
+    dashboard_integration: true
+    automated_reports: true
+    custom_analytics: true
+    
+  certification_tracking:
+    digital_badges: true
+    transcript_management: true
+    renewal_notifications: true
+
+# Corporate Metadata
+metadata:
+  training_category: "professional_development"
+  business_function: "cross_functional"
+  seniority_level: "all_levels"
+  
+  compliance_requirements:
+    - gdpr_compliant: true
+    - accessibility_standards: "wcag_2.1_aa"
+    - corporate_policies: "aligned"
+    
+  business_outcomes:
+    primary_outcomes: ["skill_enhancement", "productivity_increase", "quality_improvement"]
+    secondary_outcomes: ["employee_satisfaction", "retention_improvement", "innovation_catalyst"]

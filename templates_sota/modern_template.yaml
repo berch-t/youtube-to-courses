@@ -1,0 +1,136 @@
+# Modern SOTA Template Configuration
+name: "Modern"
+description: "Template moderne avec emojis et éléments visuels engageants"
+version: "1.0.0"
+
+# Header Configuration
+header:
+  title_prefix: "🚀"
+  include_badges: true
+  include_metadata: true
+  timestamp_format: "%Y-%m-%d"
+  center_header: true
+
+# Badges Configuration  
+badges:
+  level: 
+    prefix: "Niveau"
+    color: "blue"
+  duration:
+    prefix: "Durée" 
+    color: "green"
+  modules:
+    prefix: "Modules"
+    color: "orange"
+  style:
+    prefix: "Style"
+    color: "purple"
+
+# Section Structure
+sections:
+  overview:
+    title: "📋 Vue d'Ensemble Exécutive"
+    include: true
+    subsections:
+      - vision: "🎯 Vision du Cours"
+      - metrics: "📊 Métriques du Cours" 
+      - objectives: "🎯 Objectifs Stratégiques"
+      - roadmap: "🗺️ Architecture du Cours"
+
+  modules:
+    title_prefix: "📚 Module"
+    include_difficulty_icon: true
+    include_duration_badge: true
+    include_learning_objectives: true
+    include_key_concepts: true
+    include_reflection_questions: true
+    include_practical_exercises: true
+    
+# Module formatting
+module_format:
+  difficulty_icons:
+    1: "🟢"
+    2: "🟡" 
+    3: "🟠"
+    4: "🔴"
+    5: "⚫"
+    
+  duration_format: "⏱️ {duration}"
+  
+  sections:
+    objectives: 
+      title: "🎯 Objectifs d'Apprentissage"
+      format: "checklist"
+    content:
+      title: "📖 Contenu Principal"  
+      format: "structured"
+    concepts:
+      title: "🔑 Concepts Clés"
+      format: "highlight_boxes"
+    exercises:
+      title: "💪 Exercices Pratiques"
+      format: "numbered_list"
+    reflection:
+      title: "🤔 Questions de Réflexion"
+      format: "bulleted_list"
+    resources:
+      title: "📚 Ressources Complémentaires"
+      format: "linked_list"
+
+# Footer/Appendices
+appendices:
+  include_glossary: true
+  include_bibliography: true
+  include_resources: true
+  include_assessment_criteria: true
+  
+  glossary:
+    title: "📖 Glossaire"
+    format: "definition_list"
+  
+  bibliography:
+    title: "📚 Bibliographie"
+    format: "academic_citations"
+    
+  resources:
+    title: "🔗 Ressources Additionnelles"
+    sections:
+      - online_resources: "Ressources en Ligne"
+      - tools: "Outils Recommandés"
+      - communities: "Communautés et Forums"
+      
+  assessment:
+    title: "📋 Critères d'Évaluation"
+    include_rubrics: true
+    include_self_assessment: true
+
+# Styling  
+styling:
+  use_emojis: true
+  use_badges: true
+  use_tables: true
+  use_callouts: true
+  use_code_blocks: true
+  
+  callout_types:
+    - "💡 Conseil"
+    - "⚠️ Attention"
+    - "🔍 À Noter"
+    - "⚡ Action"
+    
+# Quality Validation
+validation:
+  min_modules: 3
+  max_modules: 12
+  min_module_length: 500
+  max_module_length: 3000
+  required_module_sections:
+    - "objectives"
+    - "content" 
+    - "concepts"
+  
+  content_rules:
+    - no_duplicate_titles: true
+    - consistent_formatting: true
+    - proper_hierarchy: true
+    - balanced_content_length: true
